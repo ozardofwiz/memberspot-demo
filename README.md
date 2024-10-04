@@ -10,11 +10,12 @@ The requirements can be found [here](https://github.com/memberspotde/coding-chal
 To enable pagination and global filtering across all fields in the SWAPI (Star Wars API), I implemented the following solution:
 
 1. **Load Required Data**: 
-   - Retrieve data for all people, including `name`, `birth_year`, `planet.name`, and `planet.terrain`. This involves making three requests to the SWAPI API:
+   - Retrieve data for all people, including `name`, `birth_year`, `planet.name`, and `planet.terrain`. This involves making three requests to the SWAPI API:  
+     
      1.1 Fetch all people from the SWAPI.  
      1.2 Batch-fetch all person details in a single request.  
      1.3 Batch-fetch all planets in a single request.  
-     1.4 Map all data into a single `Person` array object.
+     1.4 Map all data into a single Person array object.
 
 2. **In-Memory Caching**: 
    - Cache the data in memory for the lifetime of the server application, as there are only 82 records in total.
