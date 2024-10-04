@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "sourceMap": true
+  },
+  "options": {
+    "outputPath": "dist/apps/server",
+    "main": "apps/server/src/main.ts",
+    "tsConfig": "apps/server/tsconfig.app.json",
+    "assets": ["apps/server/src/assets"],
+    "output": "dist/apps/server"
+  }
+}

@@ -1,0 +1,40 @@
+<p-table [value]="people" [paginator]="true" [rows]="10" [lazy]="true" (onLazyLoad)="loadPeople($event)"
+  [totalRecords]="totalRecords" [loading]="loading">
+  <ng-template pTemplate="caption">
+    <div class="flex">
+      <h3>SWAPI Demo</h3>
+      <div class="ml-auto align-self-center">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (keyup)="onFilterKeyUp($event)" [(ngModel)]="globalFilter"
+            placeholder="Suche" />
+        </span>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th class="col-3">Name</th>
+      <th class="col-3">Birth Year</th>
+      <th class="col-3">Planet</th>
+      <th class="col-3">Terrain</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-person>
+    <tr>
+      <td>{{ person.name }}</td>
+      <td>{{ person.birth_year }}</td>
+      <td>{{ person.planet?.name }}</td>
+      <td>{{ person.planet?.terrain }}</td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="emptymessage" let-columns>
+    <tr>
+      <td colspan="4" class="text-center">
+        Keine Einträge gefunden.
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
